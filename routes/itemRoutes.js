@@ -3,7 +3,7 @@ const Item = require("../models/Item");
 
 const router = express.Router();
 
-// Create an Item (POST)
+// Create (POST)
 router.post("/", async (req, res) => {
   try {
     const newItem = new Item(req.body);
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Get All Items (GET)
+// Get All (GET)
 router.get("/", async (req, res) => {
   try {
     const items = await Item.find();
@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get Single Item by ID (GET)
+// Get by ID (GET)
 router.get("/:id", async (req, res) => {
   try {
     const item = await Item.findById(req.params.id);
@@ -46,7 +46,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Delete an Item (DELETE)
+// Delete (DELETE)
 router.delete("/:id", async (req, res) => {
   try {
     const deletedItem = await Item.findByIdAndDelete(req.params.id);
