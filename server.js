@@ -18,7 +18,7 @@ mongoose
   .catch((err) => console.error(err));
 
 // Routes
-const itemRoutes = require("./routes/itemRoutes");
+const itemRoutes = require("./routes/songRoutes");
 app.use("/api/items", itemRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

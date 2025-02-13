@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const itemSchema = new mongoose.Schema({
+const songSchema = new mongoose.Schema({
   songName: { type: String, required: true }
 }); // used for request body to determine it's structure
 
-module.exports = mongoose.model("Item", itemSchema);
+module.exports = mongoose.model("Song", songSchema);
 
 /*
 [
