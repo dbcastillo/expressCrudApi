@@ -1,9 +1,7 @@
 const express = require("express");
 const Song = require("../models/Song");
-
 const router = express.Router();
 
-// Create (POST)
 router.post("/", async (req, res) => {
   try {
     const newSong = new Song(req.body);
@@ -14,7 +12,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Get All (GET)
 router.get("/", async (req, res) => {
   try {
     const songs = await Song.find();
@@ -24,7 +21,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get by ID (GET)
 router.get("/:id", async (req, res) => {
   try {
     const song = await Song.findById(req.params.id);
@@ -35,7 +31,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Update an Item (PUT)
 router.put("/:id", async (req, res) => {
   try {
     if (!Object.keys(req.body).length) {
@@ -52,7 +47,6 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Delete (DELETE)
 router.delete("/:id", async (req, res) => {
   try {
     const deletedSong = await Song.findByIdAndDelete(req.params.id);
